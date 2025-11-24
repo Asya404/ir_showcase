@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:DRContour DRPContourDownwCompat="V 1.3" DRPContourVersion="V 1.3" IRDownwCompat="V 1.3" IRVersion="V 1.3"
+xmlns:p="http://www.iredes.org/xml/DrillRig" xmlns:p1="http://www.iredes.org/xml"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.iredes.org/xml/DrillRig ../IREDES/xml/ApplicationProfiles/MachineProfiles/DR-DrillRig_V1.3/DrillRig.xsd http://www.iredes.org/xml ../../../Desktop/IREDES/xml/CuO/IRtypes.xsd ">
+  <p1:GenHead>
+    <p1:FileCreateDate>2001-12-31T12:00:00</p1:FileCreateDate>
+    <p1:IRversion DownwCompat="V 1.3">V 1.3</p1:IRversion>
+  </p1:GenHead>
+  <p1:PlanId>p1:PlanId</p1:PlanId>
+  <p:Coordsystem>
+    <p1:CoordSysName>p1:CoordSysName</p1:CoordSysName>
+    <p1:TMatrix>
+      <p1:Col>
+        <p1:x>0.0</p1:x>
+        <p1:y>0.0</p1:y>
+        <p1:z>0.0</p1:z>
+        <p1:w>0.0</p1:w>
+      </p1:Col>
+      <p1:Col>
+        <p1:x>0.0</p1:x>
+        <p1:y>0.0</p1:y>
+        <p1:z>0.0</p1:z>
+        <p1:w>0.0</p1:w>
+      </p1:Col>
+      <p1:Col>
+        <p1:x>0.0</p1:x>
+        <p1:y>0.0</p1:y>
+        <p1:z>0.0</p1:z>
+        <p1:w>0.0</p1:w>
+      </p1:Col>
+      <p1:Col>
+        <p1:x>0.0</p1:x>
+        <p1:y>0.0</p1:y>
+        <p1:z>0.0</p1:z>
+        <p1:w>0.0</p1:w>
+      </p1:Col>
+    </p1:TMatrix>
+    <p1:CsysType>L</p1:CsysType>
+  </p:Coordsystem>
+  <p:PointTable>
+    <p:LayerId>p:LayerId</p:LayerId>
+    <p:NumberOfPoints>0</p:NumberOfPoints>
+    <p:Point>
+      <p:PointCoord>
+        <p1:PointX>0</p1:PointX>
+        <p1:PointY>0</p1:PointY>
+        <p1:PointZ>0</p1:PointZ>
+      </p:PointCoord>
+      <p:InvertedRadius>0.0</p:InvertedRadius>
+      <p:LineSegType>Wall</p:LineSegType>
+      <p:PointType>node</p:PointType>
+    </p:Point>
+  </p:PointTable>
+  <p1:GenTrailer>
+    <p1:FileCloseDate>2001-12-31T12:00:00</p1:FileCloseDate>
+    <p1:ChkSum>0F00</p1:ChkSum>
+  </p1:GenTrailer>
+</p:DRContour>

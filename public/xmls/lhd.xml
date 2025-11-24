@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LT:IRLTMMon xmlns:LT="http://www.iredes.org/xml/LHD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iredes.org/xml/LHD ../IREDES/xml/ApplicationProfiles/MachineProfiles/LT-LHD_V1.0/LHDTrucks.xsd ">
+  <GenTrailer/>
+</LT:IRLTMMon>
