@@ -14,16 +14,44 @@ function App() {
 
   const [selected, setSelected] = useState(equipment[0]);
 
-  const [xmlContent, setXmlContent] = useState('');
+  const [xmlContent, setXmlContent] = useState<string | null>(null);
 
   useEffect(() => {
+    let interval: any;
+    let cancelled = false;
+
     if (selected?.xml) {
+      setXmlContent(null);
+
       fetch(selected.xml)
         .then(res => res.text())
-        .then(text => setXmlContent(text));
+        .then(text => {
+          if (cancelled) return;
+
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(text, "text/xml");
+
+          interval = setInterval(() => {
+            const cols = Array.from(xmlDoc.getElementsByTagName("p1:Col"));
+
+            cols.forEach(col => {
+              Array.from(col.children).forEach(child => {
+                child.textContent = (Math.random() * 10).toFixed(4);
+              });
+            });
+
+            const updated = new XMLSerializer().serializeToString(xmlDoc);
+            setXmlContent(updated);
+          }, 100);
+        });
+
     } else {
-      setXmlContent('');
+      setXmlContent('Sorry, no XML available');
     }
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
   }, [selected]);
 
 
@@ -47,8 +75,8 @@ function App() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <Text>{selected.name}</Text>
               <Text>XML example</Text>
-              {xmlContent && <pre style={{ maxHeight: 350, maxWidth: 400, overflow: 'auto', background: '#f0f0f0', padding: 10 }}>
-                {xmlContent}
+              {<pre style={{ maxHeight: 350, maxWidth: 400, overflow: 'auto', background: '#f0f0f0', padding: 10 }}>
+                {xmlContent === null ? 'Loading...' : xmlContent}
               </pre>}
             </div>
           </div>
